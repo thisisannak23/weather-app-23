@@ -1,7 +1,60 @@
 .Weather {
-  border: 1px solid #dadde1;
+  color: rgb(32, 33, 36);
+  display: block;
+  font-family: Roboto, arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 form {
-  display: inline;
+  border-radius: 25px;
+  box-shadow: 0 4px 12px rgba(23, 23, 23, 0.9);
+  background: #303134;
+  border-color: rgba(223, 225, 229, 0);
+  display: inline-block;
+  color: rgb(189, 193, 198);
+  margin: 20px;
+  padding: 5px;
+}
+
+.formControl {
+  border-radius: 25px;
+  border: none;
+  margin-right: 5px;
+  line-height: 0.8cm;
+  padding-left: 10px;
+}
+
+.button {
+  border-radius: 25px;
+  border: none;
+  margin-left: 5px;
+  line-height: 0.8cm;
+}
+
+li {
+  list-style: none;
+}
+
+.displayedResults {
+  display: flex;
+  align-items: baseline;
+}
+
+#tempNum {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+#units {
+  font-size: 12px;
+  color: rgb(32, 33, 36);
+  display: inline-block;
+  font-family: Roboto, arial, sans-serif;
+  font-weight: 400;
+  height: 24px;
+  line-height: 24px;
+  margin-top: 6px;
+  padding-left: 6px;
+  vertical-align: top;
 }
