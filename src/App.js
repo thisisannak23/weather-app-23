@@ -11,7 +11,6 @@ export default function App() {
         This project was coded by Anna and is{" "}
         <a
           href="https://github.com/thisisannak23/weather-app-23"
-          target="_blank"
         >
           open sourced on GitHub
         </a>
