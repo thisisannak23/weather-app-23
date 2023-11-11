@@ -57,11 +57,16 @@ img {
   font-size: 60px;
 }
 
-#units {
+.units {
   font-size: 24px;
   display: inline-block;
   font-weight: 400;
   margin-top: 6px;
   padding-left: 6px;
   vertical-align: top;
+}
+
+footer{
+  text-align: center;
+  padding:3px;
 }
