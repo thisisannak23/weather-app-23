@@ -8,11 +8,7 @@ export default function App() {
       <div className="container"></div>
       <Weather defaultCity="Saint Louis" />
       <footer>
-        This project was coded by{" "}
-        <a href="" target="_blank">
-          Anna
-        </a>{" "}
-        and is{" "}
+        This project was coded by Anna and is{" "}
         <a
           href="https://github.com/thisisannak23/weather-app-23"
           target="_blank"
