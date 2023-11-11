@@ -41,7 +41,7 @@ li {
   align-items: baseline;
 }
 
-#tempNum {
+#currentTemperature {
   font-weight: bold;
   font-size: 40px;
 }
