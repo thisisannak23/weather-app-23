@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Weather.css";
+import Date from "./Date";
 import axios from "axios";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
   const [ready, setReady] = useState(false);
@@ -11,12 +13,11 @@ export default function Weather(props) {
       ready: true,
       temperature: response.data.temperature.current,
       wind: response.data.wind.speed,
-      city: response.data.city,
+      city: /*response.data.city,*/ "Chicago",
       humidity: response.data.temperature.humidity,
       description: response.data.condition.description,
       realFeel: response.data.temperature.feels_like,
       icon: response.data.condition.icon_url,
-      time: response.data.time,
     });
     setReady(true);
   }
@@ -32,14 +33,20 @@ export default function Weather(props) {
           />
           <input type="submit" value="Search" className="button" />
         </form>
+        <WeatherInfo data={weatherData} />
         <div className="displayedResults">
           <h3>
             <span id="searchResult">Results for </span>
             {weatherData.city}
           </h3>
+          <p>
+            <Date/>
+          </p>
         </div>
         <ul>
-          <li>{weatherData.time}</li>
+          <li>
+            <></>
+          </li>
           <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row">
