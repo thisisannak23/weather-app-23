@@ -4,27 +4,30 @@ import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast.js";
 
-export default function Weather(props) {
 
+export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
       ready: true,
-      temperature: response.data.temperature.current,
+      coordinates: response.data.coord,
+      temperature: response.data.main.temp,
+      date: new Date(response.data.dt * 1000),
       wind: response.data.wind.speed,
-      city: response.data.city,
-      humidity: response.data.temperature.humidity,
-      description: response.data.condition.description,
-      realFeel: response.data.temperature.feels_like,
-      icon: response.data.condition.icon_url,
+      city: response.data.name,
+      humidity: response.data.main.humidity,
+      description: response.data.weather.description,
+      realFeel: response.data.main.feels_like,
+      iconUrl: "",
     });
   }
 
   function search() {
-    const apiKey = "86b147443toea07840aa2fbf50e2a306";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    const apiKey = "f9de746b9d23a9c915974277fc1710ae";
+    let city = "Chicago";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -50,7 +53,7 @@ export default function Weather(props) {
           <input type="submit" value="Search" className="button" />
         </form>
         <WeatherInfo data={weatherData} />
-        <WeatherForecast />
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
