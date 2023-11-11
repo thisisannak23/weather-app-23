@@ -16,6 +16,7 @@ export default function Weather(props) {
       description: response.data.condition.description,
       realFeel: response.data.temperature.feels_like,
       icon: response.data.condition.icon_url,
+      time: response.data.time,
     });
     setReady(true);
   }
@@ -38,8 +39,8 @@ export default function Weather(props) {
           </h3>
         </div>
         <ul>
-          <li>Wednesday 12:20</li>
-          <li>{weatherData.description}</li>
+          <li>{weatherData.time}</li>
+          <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row">
           <div className="col-6">
@@ -61,7 +62,7 @@ export default function Weather(props) {
     );
   } else {
     const apiKey = "86b147443toea07840aa2fbf50e2a306";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
 
     return "loading...";
