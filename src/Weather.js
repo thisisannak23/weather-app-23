@@ -4,6 +4,7 @@ import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
+
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
@@ -18,7 +19,6 @@ export default function Weather(props) {
       realFeel: response.data.temperature.feels_like,
       icon: response.data.condition.icon_url,
     });
-    setReady(true);
   }
 
   function search() {
