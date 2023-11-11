@@ -2,8 +2,10 @@
   color: rgb(32, 33, 36);
   display: block;
   font-family: Roboto, arial, sans-serif;
-  font-size: 18px;
-  font-weight: 400;
+  text-align: center;
+  width: auto;
+  border: 5px solid black;
+  padding: 5px;
 }
 
 form {
@@ -32,28 +34,33 @@ form {
   line-height: 0.8cm;
 }
 
-li {
-  list-style: none;
+.row {
+  margin: 0 auto;
 }
 
-.displayedResults {
-  display: flex;
-  align-items: baseline;
+li {
+  text-align: left;
+}
+
+ul {
+  list-style: none;
+  padding: 0 auto;
+  margin-bottom: 0px;
+}
+
+img {
+  vertical-align: top;
 }
 
 #currentTemperature {
   font-weight: bold;
-  font-size: 40px;
+  font-size: 60px;
 }
 
 #units {
-  font-size: 12px;
-  color: rgb(32, 33, 36);
+  font-size: 24px;
   display: inline-block;
-  font-family: Roboto, arial, sans-serif;
   font-weight: 400;
-  height: 24px;
-  line-height: 24px;
   margin-top: 6px;
   padding-left: 6px;
   vertical-align: top;
