@@ -5,22 +5,20 @@ import FormattedDate from "./FormattedDate";
 export default function WeatherInfo(props) {
   return (
     <div className="weatherInfo">
-      <div className="displayedResults">
-        <h3>
-          <span id="searchResult">Currently in </span>
-          <span>{props.data.city}</span>
-        </h3>
-      </div>
-      <p>
-        <FormattedDate date={props.data.date} />
-      </p>
-      <p className="text-capitalize">{props.data.description}</p>
+      <h3 id="searchResult">{props.data.city}</h3>
+      <ul>
+        <li>
+          <FormattedDate date={props.data.date} />
+        </li>
+        <li className="text-capitalize">{props.data.description}</li>
+      </ul>
       <div className="row">
         <div className="col-6">
           <img src={props.data.icon} alt={props.data.description} />
           <Conversion celsius={props.data.temperature} />
           <br />
         </div>
+
         <div className="col-6">
           <ul>
             <li>Real Feel: {Math.round(props.data.realFeel)}°F</li>

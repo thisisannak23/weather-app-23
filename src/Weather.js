@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
-import WeatherForecast from "./WeatherForecast.js";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 
 export default function Weather(props) {
@@ -13,15 +13,15 @@ export default function Weather(props) {
       ready: true,
       coordinates: response.data.coord,
       temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
+      description: response.data.weather[0].description,
       wind: response.data.wind.speed,
       city: response.data.name,
-      humidity: response.data.main.humidity,
-      description: response.data.weather[0].description,
       realFeel: response.data.main.feels_like,
-      icon: response.data.weather[0].icon,
-      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}10d@2x.png`,
     });
+    /*-*/
   }
 
   function handleSubmit(event) {
@@ -43,14 +43,16 @@ export default function Weather(props) {
     return (
       <div className="Weather">
         <form onSubmit={handleSubmit}>
-          <input
-            type="search"
-            placeholder="Enter a City"
-            className="formControl"
-            autoFocus="on"
-            onChange={handleCityChange}
-          />
-          <input type="submit" value="Search" className="button" />
+          <div>
+            <input
+              type="search"
+              placeholder="Enter a City"
+              className="formControl"
+              autoFocus="on"
+              onChange={handleCityChange}
+            />
+            <input type="submit" value="Search" className="button" />
+          </div>
         </form>
         <WeatherInfo data={weatherData} />
         <WeatherForecast coordinates={weatherData.coordinates} />
