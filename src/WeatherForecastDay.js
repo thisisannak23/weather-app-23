@@ -31,7 +31,6 @@ export default function WeatherForecastDay(props) {
   return (
     <div>
       <div className="WeatherForecastDay">{day()}</div>
-      <div className="WeatherIcon"></div>
       <div className="WeatherForecastTemperature">
         <span className="WeatherForecastTemperature-max">
           {maxTemperature()}
@@ -44,7 +43,14 @@ export default function WeatherForecastDay(props) {
   );
 }
 
-/*import React from "react";
+/*
+
+        <img
+          src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/{props.data.daily.condition.icon}.png"
+          alt={props.data.daily.condition.description}
+        />
+
+import React from "react";
 
 export default function WeatherForecastDay(props) {
   function maxTemperature() {

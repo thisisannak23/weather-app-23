@@ -14,6 +14,7 @@ export default function WeatherInfo(props) {
       </ul>
       <div className="row">
         <div className="col-6">
+          <img src={props.data.iconUrl} alt="icon matching weather description"/>
           <Conversion celsius={props.data.temperature} />
           <br />
         </div>
