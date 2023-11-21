@@ -19,9 +19,8 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       city: response.data.name,
       realFeel: response.data.main.feels_like,
-      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}10d@2x.png`,
+      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
-    /*-*/
   }
 
   function handleSubmit(event) {
