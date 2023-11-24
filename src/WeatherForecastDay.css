@@ -1,0 +1,13 @@
+.WeatherForecastDay {
+  vertical-align: middle;
+  font-weight: 700;
+}
+
+.WeatherForecastIcon {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.WeatherForecastTemperature {
+  margin-top: 3px;
+}

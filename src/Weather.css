@@ -1,55 +1,48 @@
 .Weather {
   color: rgb(32, 33, 36);
-  display: block;
-  font-family: Roboto, arial, sans-serif;
   text-align: center;
-  width: auto;
   border: 5px solid black;
+  border-radius: 100px;
   padding: 5px;
+  margin-top: 10px;
+  width: fit-content;
+  margin: 5px auto;
 }
 
 form {
-  border-radius: 25px;
-  box-shadow: 0 4px 12px rgba(23, 23, 23, 0.9);
-  background: #303134;
-  border-color: rgba(223, 225, 229, 0);
-  display: inline-block;
-  color: rgb(189, 193, 198);
-  margin: 20px;
-  padding: 5px;
-}
-
-.formControl {
-  border-radius: 25px;
-  border: none;
-  margin-right: 5px;
-  line-height: 0.8cm;
-  padding-left: 10px;
-}
-
-.button {
-  border-radius: 25px;
-  border: none;
-  margin-left: 5px;
-  line-height: 0.8cm;
+  margin: 5px;
+  vertical-align: baseline;
 }
 
 .row {
-  margin: 0 auto;
+  margin: 15px;
 }
 
-li {
-  text-align: left;
+.form-control {
+  border-radius: 100px;
+  border: none;
 }
 
-ul {
-  list-style: none;
-  padding: 0 auto;
-  margin-bottom: 0px;
+.form-control::placeholder {
+  text-align: center;
+  padding: 0px;
+}
+
+.searchButton {
+  border: none;
+  border-radius: 100px;
+  background-color: #f4c01d;
+  padding-top: 5px;
+}
+
+.searchButton:hover {
+  background-color: #18c0c0;
 }
 
 img {
   vertical-align: top;
+  border: 3px solid #59528d;
+  border-radius: 100px;
 }
 
 #currentTemperature {
@@ -66,7 +59,7 @@ img {
   vertical-align: top;
 }
 
-footer{
+footer {
   text-align: center;
-  padding:3px;
+  padding: 3px;
 }
